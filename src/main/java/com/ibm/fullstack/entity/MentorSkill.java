@@ -1,5 +1,6 @@
 package com.ibm.fullstack.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,23 +11,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Store role information.
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "sys_user_role", schema = "fullstack")
-@IdClass(UserRoleMapPK.class)
-public class UserRoleMap {
+@Table(name = "mentor_skills", schema = "fullstack")
+@IdClass(MentorSkillPK.class)
+public class MentorSkill {
 
 	@Id
-	@Column(name = "role")
-	private String role;
-
-	@Id
-	@Column(name = "user_id")
+	@Column(name="user_id")
 	private Long userId;
-
+	
+	@Id
+	@Column(name="skill_id")
+	private Long skillId;
+	
+	@Column(name="level")
+	private Integer level;
 }
