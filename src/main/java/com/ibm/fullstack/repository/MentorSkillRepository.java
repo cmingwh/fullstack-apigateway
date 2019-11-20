@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 import com.ibm.fullstack.entity.MentorSkill;
 
 @Repository
-public interface MentorSkillRepository extends JpaRepository<MentorSkill, Long> {
+public interface MentorSkillRepository extends JpaRepository<MentorSkill, String> {
 
-	List<MentorSkill> findByUserId(Long userId);
+	List<MentorSkill> findByUserName(String userName);
 
-	void deleteByUserId(Long userId);
+	void deleteByUserName(String userName);
 }

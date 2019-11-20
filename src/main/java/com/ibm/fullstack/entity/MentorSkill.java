@@ -18,10 +18,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "mentor_skills", schema = "fullstack")
 @IdClass(MentorSkillPK.class)
 public class MentorSkill {
-
-	@Id
-	@Column(name="user_id")
-	private Long userId;
 	
 	@Id
 	@Column(name="skill_id")
@@ -29,4 +25,8 @@ public class MentorSkill {
 	
 	@Column(name="level")
 	private Integer level;
+	
+	@Id
+	@Column(name="user_name")
+	private String userName;
 }

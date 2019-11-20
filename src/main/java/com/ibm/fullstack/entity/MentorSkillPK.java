@@ -14,5 +14,5 @@ public class MentorSkillPK implements Serializable {
 
 	private Long skillId;
 
-	private Long userId;
+	private String userName;
 }

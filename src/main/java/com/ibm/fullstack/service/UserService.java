@@ -49,8 +49,8 @@ public class UserService {
 		mentorSkillRepository.saveAll(skills);
 	}
 
-	public void deleteSkills(Long userId) {
-		mentorSkillRepository.deleteByUserId(userId);
+	public void deleteSkills(String userName) {
+		mentorSkillRepository.deleteByUserName(userName);
 	}
 	
 }

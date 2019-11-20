@@ -48,7 +48,7 @@ public class UserController {
     	if(useDtl != null) {
     		List<MentorSkill> skills = user.getSkills();
     		if(skills != null && skills.size() > 0) {
-    			userService.deleteSkills(user.getUserId());
+    			userService.deleteSkills(user.getUserName());
     			userService.saveSkills(skills);
     		}
     		useDtl.setContactNumber(user.getContactNumber());

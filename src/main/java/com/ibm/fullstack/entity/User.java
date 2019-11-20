@@ -24,11 +24,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "sys_user", schema = "fullstack")
 public class User {
-	@Id
+	
 	@GeneratedValue
 	@Column(name="user_id")
 	private Long userId;
 	
+	@Id
 	@Column(name="user_name")
 	private String userName;
 
@@ -78,13 +79,13 @@ public class User {
 	private String examples;
 	
 	@ManyToMany
-	@JoinTable(name = "sys_user_role", joinColumns = @JoinColumn(name = "user_id", 
-		referencedColumnName = "user_id", updatable = false, insertable = false), 
+	@JoinTable(name = "sys_user_role", joinColumns = @JoinColumn(name = "user_name", 
+		referencedColumnName = "user_name", updatable = false, insertable = false), 
 		inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "role", 
 		updatable = false, insertable = false))
 	private List<Role> roles;
 	
 	@OneToMany(cascade=CascadeType.ALL)  
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="user_name")
 	private List<MentorSkill> skills;
 }
